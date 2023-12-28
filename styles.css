@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Vibur&display=swap");
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+#container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.creature {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease-out;
+  z-index: -2;
+}
+
+.creature img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Adjust as needed */
+}
+
+#spotlight {
+  /* position: fixed; */
+  position: absolute;
+  opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite alternate forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.neonText {
+  font-family: "Vibur", cursive;
+  color: #fff;
+  margin: 3rem;
+  /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f09,
+    0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09; */
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #09f,
+    0 0 82px #09f, 0 0 92px #09f, 0 0 102px #09f, 0 0 151px #09f;
+
+  font-size: 4rem;
+  animation: pulsate 0.11s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 12px #fff, 0 0 20px #fff, 0 0 41px #09f,
+      0 0 81px #09f, 0 0 91px #09f, 0 0 101px #09f, 0 0 151px #09f;
+  }
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #09f,
+      0 0 73px #09f, 0 0 80px #09f, 0 0 94px #09f, 0 0 140px #09f;
+  }
+}
+
+/* @keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f09,
+      0 0 80px #f09, 0 0 90px #f09, 0 0 100px #f09, 0 0 150px #f09;
+  }
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #f09,
+      0 0 73px #f09, 0 0 80px #f09, 0 0 94px #f09, 0 0 140px #f09;
+  }
+} */
