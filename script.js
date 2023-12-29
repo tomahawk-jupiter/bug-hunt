@@ -8,16 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
   initFlashlight();
 
   // Set random initial positions for creatures
-  creatures.forEach(function (creature, index) {
-    // const initialX = Math.random() * window.innerWidth;
-    // const initialY = Math.random() * window.innerHeight;
+  initCreatures();
+  setInterval(initCreatures, 3000); // reset creatures - they currently end up getting pushed off the screen
 
-    const initialX = window.innerWidth / (index + 1);
-    const initialY = window.innerHeight / (index + 1);
-    console.log({ initialX, initialY, index });
+  function initCreatures() {
+    creatures.forEach(function (creature, index) {
+      // const initialX = Math.random() * window.innerWidth;
+      // const initialY = Math.random() * window.innerHeight;
 
-    creature.style.transform = `translate(${initialX}px, ${initialY}px)`;
-  });
+      const initialX = window.innerWidth / (index + 1);
+      const initialY = window.innerHeight / (index + 1);
+
+      creature.style.transform = `translate(${initialX}px, ${initialY}px)`;
+    });
+  }
 
   function initFlashlight() {
     const centerOfScreen = {
